@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block home %}
+
+    <!-- Page Header -->
+     
+      <div class="container myspace">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-heading">
+              <h1>{{posts.title}}</h1>
+              <h2 class="subheading">{{posts.tagline}}</h2>
+              <span class="meta">Posted by
+                <a href="#">Admin</a>
+                on {{posts.date}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+      <div class="container myspace">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            {{posts.content}}
+
+            
+          </div>
+        </div>
+      </div>
+    </article>
+
+   {% endblock %}

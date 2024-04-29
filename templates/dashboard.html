@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+
+{% block home %}
+<section id="home" class="main-home parallax-section">
+  <div class="overlay"></div>
+  <div id="particles-js"></div>
+  <div class="container my-120">
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <h1>Welcome to Dashboard Panel</h1>
+        <h3>Successfully login as {{user.name}}</h3>
+        <h3>Your Email id is {{user.email}}</h3>
+        <h3>Your hashed password is {{user.password}}</h3>
+        <a href="/logout" class="smoothScroll btn btn-default">Logout</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %} {% block section %}
+<h2 class="edithead">Add New Post</h2>
+<hr />
+<a href="/edit/0">
+  <button type="submit" class="btn btn-info edithead">Add New Post</button></a
+>
+
+<div class="container table-data">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">S.No</th>
+        <th scope="col">Title</th>
+        <th scope="col">Date</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for posts in posts %}
+      <tr>
+        <th scope="row">{{loop.index}}</th>
+        <td>{{posts.title}}</td>
+        <td>{{posts.date}}</td>
+        <td>
+          <a href="/edit/{{posts.sno}}">
+            <button class="btn btn-primary">Edit</button></a
+          >
+        </td>
+        <td>
+          <a href="/delete/{{posts.sno}}"
+            ><button class="btn btn-danger">Delete</button></a
+          >
+        </td>
+      </tr>
+
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

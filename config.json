@@ -1,0 +1,19 @@
+{
+    "params":
+    {
+    "local_server":"True",
+    "local_uri":"mysql://root:@localhost/pythonblog",
+    "prod_uri":"mysql://root:@localhost/pythonblog",
+    "fb_uri":"https://www.facebook.com/",
+    "tw_uri":"https://www.twitter.com/",
+    "gm_uri":"https://www.gmail.com/",
+    "db_uri":"https://dribbble.com/",
+    "lndln_uri":"https://linkdln.com/",
+    "heading":"Welcome to Python Blog",
+    "subheading":"Responsive Blog Fullstack",
+    "no_of_posts": 2,
+    "footname":"Python Blog",
+    "story":"Web development in Python is a versatile and popular choice for building dynamic websites and web applications. Python provides a robust ecosystem of frameworks, libraries, and tools that simplify the development process and enable developers to create scalable and efficient web solutions. In this ultimate guide, we will explore web development with Python and different libraries for it and one example of web development."
+    }
+}
+

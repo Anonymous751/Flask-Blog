@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+<!-- Home Section -->
+{% block home %}
+<section id="home" class="main-home parallax-section">
+  <div class="overlay"></div>
+  <div id="particles-js"></div>
+  
+  <div class="container my-120">
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+
+       
+
+        <h1>{{ params['heading'] }}</h1>
+        <h3>{{params['subheading']}}</h3>
+        <a href="/register" class="smoothScroll btn btn-default">Register Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+<!-- Blog Section -->
+
+{% block section %}
+<section id="blog">
+  <div class="container">
+    <div class="row">
+      {% for posts in posts %}
+      <div class="col-md-offset-1 col-md-10 col-sm-12">
+
+          <div class="blog-post-title">
+            <h3><a href="/post/{{posts.slug_post}}">{{posts.title}}</a></h3>
+          </div>
+          <div class="blog-post-format">
+            <span
+              ><a href="#"
+                ><img
+                  src="{{url_for('static', filename ='images/author-image1.jpg') }} "
+                  class="img-responsive img-circle"
+                />
+                Jen Lopez</a
+              ></span
+            >
+            <span><i class="fa fa-date"></i>{{posts.date}}</span>
+            <span
+              ><a href="#"><i class="fa fa-comment-o"></i> 35 Comments</a></span
+            >
+          </div>
+          <div class="blog-post-des">
+            <p>{{posts.content[0:150]}}</p>
+            <a href="/post/{{posts.slug_post}}" class="btn btn-default"
+              >Continue Reading</a
+            >
+          </div>
+        </div>
+      </div>
+
+      {% endfor %}
+      <div class="button-ad">
+       <a href="{{prev}}"> <button class="btn btn-primary prev1 ">Previous</button></a>
+       <a href="{{next}}"><button class="btn btn-primary next1 ">Next</button></a>
+      </div>
+     
+    </div>
+   
+  </div>
+  
+</section>
+{% endblock %}
+
